@@ -1,0 +1,16 @@
+---
+# tasks file for roles/ios.backup
+
+- name: "Task - Create new directory"
+  file: 
+    path: "{{ playbook_dir }}/backup"
+    state: directory
+  run_once: true
+
+- name: "TASK - Get backup router config"
+  ios_config:
+    backup: yes
+    backup_options:
+      filename: "{{ inventory_hostname }}.cfg"
+      dir_path: "{{ playbook_dir }}/backup"
+...

@@ -1,0 +1,24 @@
+---
+namespace: ryangorden
+name: cisco_ios
+version: 1.0.0
+readme: README.md
+authors:
+- Ryan Gorden <ryangroden@gmail.com>
+description: Ansible Modules for Cisco Routers and Switches
+license:
+- GPL-2.0-or-later
+tags:
+  - ios
+  - cisco
+  - backup
+  - cloud
+  - collection
+  - networking
+  - sdn
+dependencies: 
+  "cisco.ios": ">=3.3.0"
+repository: https://github.com/ryangorden/Collection-Example.git
+documentation: https://github.com/ryangorden/Collection-Example/wiki
+homepage: https://github.com/ryangorden/Collection-Example.git
+issues: https://github.com/ryangorden/Collection-Example/issues
