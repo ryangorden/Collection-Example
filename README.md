@@ -26,3 +26,20 @@ A specific version of the collection can be installed by using the version keywo
       - name: https://github.com/ryangorden/Collection-Example.git
         type: git
         version: 82f04a777d18e6a3feda7dece99c729816b30c63
+
+## Using the collection
+
+You can a call role by their Fully Qualified Collection Namespace (FQCN), such as ryangorden.cisco_ios.ios_backup, or you can call roles by their short name if you list the ryangorden.cisco_ios collection in the playbook's collections keyword:
+
+    ---
+    - name: get version
+      connection: network_cli
+      gather_facts: false
+      hosts: routers
+      vars:
+        ansible_ssh_common_args: "-o StrictHostKeyChecking=no -o Ciphers=+aes256-cbc -o KexAlgorithms=+diffie-hellman-group14-sha1,diffie-hellman-group1-sha1"
+      tasks:
+        - name: backup ios device
+          ansible.builtin.include_role:
+              name: "ryangorden.cisco.ios_backup"
+          when: ansible_network_os == "ios"
